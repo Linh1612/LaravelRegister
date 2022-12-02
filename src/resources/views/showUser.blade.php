@@ -11,21 +11,33 @@
 </head>
 
 <body>
-
-    <table>
-        <thead>
-            <th>Username</th>
-            <th>Create At</th>
-        </thead>
-        <tbody>
-            @foreach ($showall as $item)
-                <tr>
-                    <td>{{ $item->username }}</td>
-                    <td>{{ $item->created_at }}</td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
+    <div style="display: flex; justify-content: space-between;">
+        <table>
+            <thead>
+                <th>Username</th>
+                <th>Create At</th>
+                <th>Change Password</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </thead>
+            <tbody>
+                @foreach ($showall as $item)
+                    <tr>
+                        <td>{{ $item->username }}</td>
+                        <td>{{ $item->created_at }}</td>
+                        <td><a href="{{ route('changePassword', ['id' => $item->id]) }}"><button>Change
+                                    Password</button></a>
+                        </td>
+                        <td><a href="{{ route('edit', ['id' => $item->id]) }}"><button>Edit</button></a></td>
+                        <td><a href="{{ route('delete', ['id' => $item->id]) }}"><button>Delete</button></a></td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+        <div>
+            <a href="{{ route('logout') }}"><button>Logout</button></a>
+        </div>
+    </div>
 
 </body>
 

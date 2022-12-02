@@ -13,7 +13,8 @@
 <body>
     <form action="/handleLogin" method="post">
         <div class="imgcontainer">
-            <img src="img_avatar2.png" alt="Avatar" class="avatar">
+            <img style="width: 100px" src="https://cdn-icons-png.flaticon.com/512/5087/5087579.png" alt="Avatar"
+                class="avatar">
         </div>
 
         <div class="container">
@@ -32,6 +33,9 @@
         <div class="container" style="background-color:#f1f1f1">
             <button type="button" class="cancelbtn">Cancel</button>
             <span class="psw">Forgot <a href="#">password?</a></span>
+            <a href="{{ route('register') }}">
+                <button type="button" style="background-color: aqua">Sign Up</button>
+            </a>
         </div>
         @csrf
     </form>
